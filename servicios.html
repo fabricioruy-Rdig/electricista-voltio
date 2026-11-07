@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiénes somos | Voltio, electricista en Montevideo</title>
+  <meta name="description" content="15 años cuidando la instalación eléctrica de las casas de Montevideo y Ciudad de la Costa: urgencias, tableros, instalaciones nuevas, iluminación, aire acondicionado y revisiones.">
+  <meta name="theme-color" content="#14213D">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_UY">
+  <meta property="og:site_name" content="Voltio · Electricista">
+  <meta property="og:title" content="Quiénes somos · Voltio, electricista en Montevideo">
+  <meta property="og:description" content="15 años cuidando la instalación eléctrica de las casas de Montevideo y Ciudad de la Costa. Mirá lo que dicen nuestros clientes.">
+  <meta property="og:url" content="https://fabricioruy-rdig.github.io/electricista-voltio/servicios.html">
+  <meta property="og:image" content="https://fabricioruy-rdig.github.io/electricista-voltio/img/compartir.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portada de Voltio, electricista en Montevideo">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/vendor/fuse.basic.min.js" defer></script>
+  <script src="js/datos.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/asistente.js" defer></script>
+  <script src="js/asistente-reservas.js" defer></script>
+  <script src="js/servicios.js" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+
+  <!-- Franja superior: la misma de la portada, fija al bajar, con el menú de servicios -->
+  <header class="franja franja--fija">
+    <div class="contenedor franja__fila">
+      <div class="franja__izq">
+        <a class="marca" href="index.html" aria-label="Voltio, volver al inicio">
+          <img src="img/icono.svg" alt="" width="28" height="28">
+          <span>Voltio</span>
+        </a>
+        <div class="menu-serv">
+            <button class="menu-serv__boton" id="menu-serv-boton" type="button" aria-expanded="false" aria-controls="menu-serv">Servicios <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="menu-serv__panel" id="menu-serv" hidden>
+              <p class="menu-serv__titulo">Tocá un servicio y te paso el precio al instante</p>
+              <ul>
+                <li><button type="button" data-pedir="urgencia" data-servicio="una urgencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><span>Urgencias 24 horas<small>Visita <b data-negocio="visita">$ 1.200</b></small></span></button></li>
+                <li><button type="button" data-pedir="tablero" data-servicio="tableros y protecciones"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 10v10"/></svg><span>Tableros y protecciones<small>Tablero completo <b data-trabajo="tablero">desde $ 14.000</b></small></span></button></li>
+                <li><button type="button" data-pedir="ambiente" data-servicio="instalaciones nuevas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v4"/></svg><span>Instalaciones nuevas<small>Por ambiente <b data-trabajo="ambiente">desde $ 9.500</b></small></span></button></li>
+                <li><button type="button" data-pedir="lampara" data-servicio="iluminación y enchufes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg><span>Iluminación y enchufes<small>Lámpara <b data-trabajo="lampara">$ 900</b></small></span></button></li>
+                <li><button type="button" data-pedir="aire" data-servicio="la línea para aire acondicionado"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M3.5 7l17 10M20.5 7l-17 10"/></svg><span>Aire acondicionado<small>Línea completa <b data-trabajo="aire">$ 6.500</b></small></span></button></li>
+                <li><button type="button" data-pedir="revision" data-servicio="la revisión preventiva"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v3H9z"/><path d="M7 4.5H5V21h14V4.5h-2"/><path d="m9 13 2 2 4-4"/></svg><span>Revisión preventiva<small>Revisión completa <b data-trabajo="revision">$ 3.500</b></small></span></button></li>
+              </ul>
+              <a class="menu-serv__pie" href="#resenas">Ver lo que dicen nuestros clientes ↓</a>
+            </div>
+          </div>
+      </div>
+      <p class="franja__texto"><span class="punto-vivo" aria-hidden="true"></span> ¿Te quedaste sin luz? <strong>Urgencias las 24 horas</strong></p>
+      <a class="franja__llamar js-demo-tel" href="#" data-numero="099 333 333">Llamar<span> al 099 333 333</span></a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- 1. Quiénes somos y qué hacemos -->
+    <section class="nosotros" aria-labelledby="titulo">
+      <div class="contenedor nosotros__fila">
+        <figure class="nosotros__foto">
+          <img src="img/electricista.webp" alt="Electricista con casco y careta de protección revisando un tablero con un tester" width="720" height="900">
+          <figcaption class="nosotros__sello"><strong>15 años</strong> cuidando casas en Montevideo</figcaption>
+        </figure>
+
+        <div class="nosotros__texto">
+          <a class="volver" href="index.html">← Volver al inicio</a>
+          <p class="nosotros__ante">Quiénes somos</p>
+          <h1 id="titulo">Electricistas de confianza, <span>desde hace 15 años.</span></h1>
+          <p>Hace 15 años que cuidamos la instalación eléctrica de las casas de Montevideo y Ciudad de la Costa. Empezamos con una camioneta y una caja de herramientas; hoy somos un equipo chico que sigue trabajando igual: <strong>llegamos a la hora acordada, te explicamos qué pasa antes de tocar nada y te damos el precio cerrado antes de empezar.</strong></p>
+          <p>Si te quedaste sin luz, <a class="enlace-servicio" href="#" role="button" data-pedir="urgencia" data-servicio="una urgencia">vamos en menos de una hora</a>, a cualquier hora. Si tu casa todavía tiene tablero de fusibles, <a class="enlace-servicio" href="#" role="button" data-pedir="tablero" data-servicio="tableros y protecciones">lo cambiamos por térmicas y disyuntor</a> para que tu familia esté protegida. Hacemos <a class="enlace-servicio" href="#" role="button" data-pedir="ambiente" data-servicio="instalaciones nuevas">instalaciones nuevas para reformas</a>, <a class="enlace-servicio" href="#" role="button" data-pedir="lampara" data-servicio="iluminación y enchufes">colocamos lámparas y enchufes</a>, dejamos lista <a class="enlace-servicio" href="#" role="button" data-pedir="aire" data-servicio="la línea para aire acondicionado">la línea del aire acondicionado</a> y, si no sabés cómo está tu instalación, <a class="enlace-servicio" href="#" role="button" data-pedir="revision" data-servicio="la revisión preventiva">la revisamos entera</a> y te decimos qué es urgente y qué puede esperar.</p>
+          <p>Cada trabajo lleva <strong>6 meses de garantía por escrito</strong> y factura, y cuando nos vamos dejamos todo limpio.</p>
+          <p class="nosotros__pista"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg> <span>Tocá cualquier servicio en <em>azul</em> y te paso el precio al instante.</span></p>
+          <div class="nosotros__acciones">
+            <button class="boton boton--azul js-abrir-chat" type="button">Hablar con el asistente</button>
+            <a class="boton boton--borde-azul" href="index.html#agenda">Agendar una visita</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Reseñas en collage -->
+    <section class="resenas" id="resenas" aria-labelledby="titulo-resenas">
+      <div class="contenedor">
+        <div class="resenas__cabeza">
+          <h2 id="titulo-resenas">Lo que dicen <span>nuestros clientes</span></h2>
+          <p class="resenas__promedio"><strong>4,8</strong> <span class="resenas__estrellas" aria-hidden="true">★★★★★</span> promedio de 6 reseñas <em>Reseñas de ejemplo (demo)</em></p>
+        </div>
+        <ul class="resenas__collage">
+          <li class="resena">
+            <div class="resena__cabeza">
+              <span class="resena__avatar" aria-hidden="true">LM</span>
+              <p><strong>Laura M.</strong><small>Pocitos · hace 2 semanas</small></p>
+            </div>
+            <p class="resena__estrellas" aria-label="5 de 5 estrellas">★★★★★<span aria-hidden="true"></span></p>
+            <p class="resena__texto">“Se me cortó la luz un domingo a la noche con los chicos en casa. En 40 minutos estaban acá y me explicaron todo con mucha paciencia. Súper recomendables.”</p>
+            <span class="resena__trabajo">Urgencia</span>
+          </li>
+          <li class="resena">
+            <div class="resena__cabeza">
+              <span class="resena__avatar" aria-hidden="true">DR</span>
+              <p><strong>Diego R.</strong><small>Malvín · hace 1 mes</small></p>
+            </div>
+            <p class="resena__estrellas" aria-label="5 de 5 estrellas">★★★★★<span aria-hidden="true"></span></p>
+            <p class="resena__texto">“Mi casa tenía el tablero de fusibles de los años 70. Me pasaron el precio antes de empezar y no cambió ni un peso. Quedó prolijo y con cada llave rotulada.”</p>
+            <span class="resena__trabajo">Cambio de tablero</span>
+          </li>
+          <li class="resena">
+            <div class="resena__cabeza">
+              <span class="resena__avatar" aria-hidden="true">MG</span>
+              <p><strong>Marta G.</strong><small>Ciudad de la Costa · hace 3 semanas</small></p>
+            </div>
+            <p class="resena__estrellas" aria-label="4 de 5 estrellas">★★★★<span aria-hidden="true">★</span></p>
+            <p class="resena__texto">“Llegaron un rato más tarde de lo acordado, aunque avisaron. La revisión fue muy completa y el informe por WhatsApp, clarísimo.”</p>
+            <span class="resena__trabajo">Revisión preventiva</span>
+          </li>
+          <li class="resena">
+            <div class="resena__cabeza">
+              <span class="resena__avatar" aria-hidden="true">SP</span>
+              <p><strong>Sebastián P.</strong><small>Cordón · hace 2 meses</small></p>
+            </div>
+            <p class="resena__estrellas" aria-label="5 de 5 estrellas">★★★★★<span aria-hidden="true"></span></p>
+            <p class="resena__texto">“Cada vez que prendía el aire saltaba la luz. Me hicieron la línea en una mañana y dejaron todo limpio. Cumplieron con todo lo que dijeron.”</p>
+            <span class="resena__trabajo">Línea para aire</span>
+          </li>
+          <li class="resena">
+            <div class="resena__cabeza">
+              <span class="resena__avatar" aria-hidden="true">AF</span>
+              <p><strong>Ana y Fernando</strong><small>Buceo · hace 1 mes</small></p>
+            </div>
+            <p class="resena__estrellas" aria-label="5 de 5 estrellas">★★★★★<span aria-hidden="true"></span></p>
+            <p class="resena__texto">“Reformamos la cocina y el living. Nos aconsejaron dónde poner cada enchufe y terminaron en los días previstos. Se nota la experiencia.”</p>
+            <span class="resena__trabajo">Instalación nueva</span>
+          </li>
+          <li class="resena">
+            <div class="resena__cabeza">
+              <span class="resena__avatar" aria-hidden="true">RB</span>
+              <p><strong>Rosa B.</strong><small>Unión · hace 1 semana</small></p>
+            </div>
+            <p class="resena__estrellas" aria-label="5 de 5 estrellas">★★★★★<span aria-hidden="true"></span></p>
+            <p class="resena__texto">“Soy jubilada y me hicieron el descuento sin tener que pedirlo. Muy respetuosos y cuidadosos con la casa. Ya los tengo agendados para lo que venga.”</p>
+            <span class="resena__trabajo">Lámparas y enchufes</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>Proyecto de demostración: Voltio es un negocio ficticio creado para un portafolio; los teléfonos, precios y reseñas no son reales. Diseño y desarrollo: <a href="https://github.com/fabricioruy-Rdig" target="_blank" rel="noopener">fabricioruy-Rdig</a> · Foto: colsan ltda en <a href="https://unsplash.com/photos/electrician-testing-electrical-panel-LMb98OOtoYU" target="_blank" rel="noopener">Unsplash</a></p>
+    </div>
+  </footer>
+
+  <!-- Asistente automático (el mismo de la portada) -->
+  <button class="chat-boton js-abrir-chat" id="chat-boton" type="button" aria-controls="chat" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M13 7.5 10 11h3l-1 3.5"/></svg>
+    <span class="chat-boton__texto">¿Te ayudo?</span>
+  </button>
+
+  <section class="chat" id="chat" aria-label="Asistente automático de Voltio" hidden>
+    <div class="chat__cabeza">
+      <div class="chat__avatar" aria-hidden="true"><img src="img/icono.svg" alt=""></div>
+      <div>
+        <strong>Asistente Voltio</strong>
+        <small>Asistente automático · responde al instante</small>
+      </div>
+      <button class="chat__minimizar" type="button" aria-label="Minimizar el asistente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg>
+      </button>
+    </div>
+    <div class="chat__mensajes" id="chat-mensajes" aria-live="polite"></div>
+    <div class="chat__opciones" id="chat-opciones"></div>
+    <form class="chat__escribir" id="chat-form">
+      <label class="oculto" for="chat-texto">Escribí tu consulta</label>
+      <input id="chat-texto" type="text" autocomplete="off" placeholder="Escribí tu consulta…">
+      <button type="submit" aria-label="Enviar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-6 16-3-7z"/></svg>
+      </button>
+    </form>
+  </section>
+</body>
+</html>
