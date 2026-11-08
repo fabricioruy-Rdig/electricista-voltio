@@ -669,6 +669,7 @@ function presupuesto(sugerido = null) {
         if (n && t.desde) desde = true;
         const c = caja.querySelector(`[data-id="${t.id}"]`);
         c.querySelector("output").textContent = n;
+        caja.querySelector(`[data-fila="${t.id}"]`).classList.toggle("presu__fila--elegida", n > 0); // resalta lo que está sumado
         c.querySelector('[data-paso="-1"]').disabled = n === 0;
         c.querySelector('[data-paso="1"]').disabled = t.max ? n >= t.max : n >= 20;
         caja.querySelector(`[data-fila="${t.id}"] small`).textContent = gratis && n ? "incluido en la instalación completa" : `${t.desde ? "desde " : ""}${pesos(t.precio)}${t.max ? "" : " c/u"}`;
@@ -697,6 +698,12 @@ function presupuesto(sugerido = null) {
       if (elegidos.length) memoria.motivo = `${elegidos.join(", ")} (${total.textContent})`;
       agendar();
     }, "", "si"], ["🏷️ ¿Hay descuentos?", descuentos]]);
+    if (sugerido) setTimeout(() => {  // si vino cargado (desde el menú o el texto), mostrar la fila elegida
+      const elegida = caja.querySelector(".presu__fila--elegida");
+      if (!elegida) return;
+      const fila = elegida.getBoundingClientRect(), zona = mensajes.getBoundingClientRect();
+      if (fila.top < zona.top || fila.bottom > zona.bottom) mensajes.scrollTop += fila.top - zona.top - zona.height / 3;
+    }, 150);
   });
 }
 function descuentos() {
